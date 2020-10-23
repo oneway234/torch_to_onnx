@@ -10,14 +10,14 @@ def CreateHparams(hparams_string=None, verbose=False):
         ################################
         # Preprocess Parameters        #
         ################################
-        in_dir='../CONV_TASNET/example_samples/data',
-        out_dir_pre='../CONV_TASNET/example_samples/data',
+        in_dir='example_samples/data',
+        out_dir_pre='example_samples/data',
 
         ################################
         # Train Parameters        #
         ################################
-        train_dir='../CONV_TASNET/example_samples/conv_tasnet/data',
-        valid_dir='../CONV_TASNET/example_samples/conv_tasnet/data',
+        train_dir='example_samples/conv_tasnet/data',
+        valid_dir='example_samples/conv_tasnet/data',
         sample_rate=44100,
         segment=2,  # seconds
         cv_maxlen=6,  # seconds
@@ -43,7 +43,7 @@ def CreateHparams(hparams_string=None, verbose=False):
         lr=1e-4,
         momentum=0,
         l2=0,
-        save_folder='../CONV_TASNET/checkpoints/conv_tasnet',
+        save_folder='checkpoints/conv_tasnet',
         checkpoint=0,
         continue_from='',
         print_freq=10,
@@ -54,10 +54,10 @@ def CreateHparams(hparams_string=None, verbose=False):
         ################################
         # Separate Parameters             #
         ################################
-        model_path='../CONV_TASNET/checkpoints/final.pth.tar',
-        mix_dir='../CONV_TASNET/example_samples',
+        model_path='checkpoints/final.pth.tar',
+        mix_dir='example_samples',
         mix_json='',
-        out_dir='../CONV_TASNET/example_samples/demo',
+        out_dir='example_samples/demo',
 
         ################################
         # Common Parameters             #
