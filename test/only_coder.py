@@ -20,7 +20,6 @@ def main(dummy_input):
                       dummy_input,
                       "../checkpoints/conv_tasnet/only_coder.onnx",
                       export_params=True)
-    # torch.save(model, '../checkpoints/only_coder.pth')
 
 
 if __name__ == '__main__':
