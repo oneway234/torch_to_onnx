@@ -3,14 +3,11 @@
 import torch
 
 def main(dummy_input):
-    # Construct Solver
-
     # model
     model = torch.load('../checkpoints/only_coder.pth')
     model.eval()
     print(model)
 
-    # input data
     torch.onnx.export(model,
                       dummy_input,
                       "../checkpoints/conv_tasnet/only_coder.onnx",
