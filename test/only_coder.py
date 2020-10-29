@@ -1,22 +1,17 @@
 #!/usr/bin/env python
 
-import argparse
-
 import torch
-
-from models.solver import Solver
-from models.encoder_decoder import ConvTasNet
-from params.hparams_tasnet import CreateHparams
 
 def main(dummy_input):
     # Construct Solver
 
     # model
     model = torch.load('../checkpoints/only_coder.pth')
+    model.eval()
     print(model)
 
     # input data
-    torch.onnx.export(model.eval(),
+    torch.onnx.export(model,
                       dummy_input,
                       "../checkpoints/conv_tasnet/only_coder.onnx",
                       export_params=True)
