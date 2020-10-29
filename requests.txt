@@ -24,7 +24,7 @@ sounddevice
 soundfile
 tensorboardX
 tensorflow==1.14.0
-torch==1.6.0
+torch==1.7.0
 tqdm
 umap-learn
 Unidecode
