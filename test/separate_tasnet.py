@@ -46,11 +46,12 @@ def separate(args):
             estimate_source = model(mixture)  # [B, C, T]
 
             # # save ONNX model
-            torch.onnx.export(model, mixture,
-                              "../CONV_TASNET/checkpoints/conv_tasnet.onnx",
-                              export_params=True
-                              # do_constant_folding=True
-                              )
+            torch.onnx._export(model, mixture,
+                               "conv_tasnet.onnx",
+                               export_params=True,
+                               opset_version=12, verbose=False,
+                               do_constant_folding=True, onnx_shape_inference=False
+                               )
             # # Remove padding and flat
             flat_estimate = remove_pad(estimate_source, mix_lengths)
             mixture = remove_pad(mixture, mix_lengths)
